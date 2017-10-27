@@ -29,7 +29,7 @@ void BFS(vector<vector<int> > edges,int V)
 
 	// Here we are considering the source as root as source vertex but
 	// we can consider any vertex as source
-	// Hence, s is the source which is equal to 1 (root node)
+	// Here, we take s as the source equal to 1
 	int s = 1;
 
 	//We will visit the source first and will mark it as visited and push it to the queue
@@ -67,15 +67,14 @@ int main()
 	// Here V represents number of vertices
 	int V = 4;
 
-	// Lets use list representation of the graph in form of edges
+	// Lets use adjacency list representation of the graph in form of edges
 	// Note that here we are using CPP STL
 	vector<vector<int> > edges(V+1);
 	// Here V+1 is the size of the vector and we have added one to the number of vertices as
-	// we are considerng the nodes to be starting from 1 to V, 1 being the root node
+	// we are considerng the nodes to be starting from 1 to V
 
 	// Remember that as here we are only considering the traversal within the graph 
 	// we are not considering the weights of the edges
-	// To have weights of invidual edge we can use adjacency list representation of the graph.
 
 	// Now, we will add some edges to the graph
 	// Say, we want to add an edge between node 1 and node 2:
