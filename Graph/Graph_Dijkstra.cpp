@@ -147,7 +147,7 @@ int main()
 	// source. Hence, for example lets have a source s = 1.
 	int s = 1;
 
-	cout<<"The distance from source is: ";
+	cout<<"The distance from source " << s << " is: ";
 
 	dijkstra(edges,V,s);
 
