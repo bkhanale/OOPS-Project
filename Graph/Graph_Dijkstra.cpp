@@ -39,17 +39,17 @@ void dijkstra(vector<list<pair<int,int> > > edges,int V,int src)
 		pair<int,int> p = *s.begin();
 		s.erase(s.begin());
 
-		// Here the vertex x represents current node and wei the distance to the 
+		// Here the vertex x represents current node and wei represents the distance to the 
 		// current node from source vertex
 		int x = p.second;
 		int wei = p.first;
 
 		// Check if the popped vertex is already visited 
-		// If the vertex is already visited then we do not need to consider 
+		// If the vertex is already visited then we do not consider it
 		// as we would have already calculated its distance from the source vertex 
 		if(visit[x]) continue;
 
-		// If the vertex is not visited then maek it as visited now
+		// If the vertex is not visited then make it as visited now
 		visit[x]=true;
 
 		// Lets have an iterator to iterate over the adjacent vertices of the current node
@@ -86,7 +86,7 @@ void dijkstra(vector<list<pair<int,int> > > edges,int V,int src)
 
 int main()
 {
-	// Lets create a graph having 4 vertices
+	// Lets create a graph having 9 vertices
 	// Here V represents number of vertices
 	int V = 9;
 
@@ -100,7 +100,7 @@ int main()
 	// Say, we want to add an edge between node 1 and node 2 with weight 4:
 	edges[1].push_back(make_pair(2,4));
 
-	// Note here that the Graph here we are considering is directed
+	// Note that the Graph here we are considering is directed
 	// If we want to have an undirected graph then we will need to push the vextex to the 
 	// connecting vertex too. 
 

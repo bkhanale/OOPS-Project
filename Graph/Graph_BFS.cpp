@@ -27,7 +27,7 @@ void BFS(vector<vector<int> > edges,int V)
 	// Let us create a queue for BFS
 	list<int> queue;
 
-	// Here we are considering the source as root as source vertex but
+	// Here we are considering the root as source vertex but
 	// we can consider any vertex as source
 	// Here, we take s as the source equal to 1
 	int s = 1;
@@ -46,7 +46,7 @@ void BFS(vector<vector<int> > edges,int V)
 		cout << s << " ";
 		queue.pop_front();
 
-		// Get all adjacent verrices of the dequeued vertex
+		// Get all adjacent vertices of the dequeued vertex
 		// If a adjacent is not visited then mark it as visited and enqueue it
 		for(i=edges[s].begin();i!=edges[s].end();i++)
 		{
