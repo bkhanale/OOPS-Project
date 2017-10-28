@@ -48,7 +48,7 @@ void DFS(vector<vector<int> > edges,int V)
 	int s = 1;
 
 	// For finding out DFS Traversal we will need a recursive helper function
-	// which will go through as every adjacent vertex of a vertex as a source
+	// which will go through every adjacent vertex of a vertex as a source
 	// Initially our source is s = 1
 	DFS_Help(edges,visited,s);
 }
