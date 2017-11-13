@@ -13,13 +13,16 @@ using namespace std;
 void dijkstra(vector<list<pair<int,int> > > edges,int V,int src)
 {
 	// Lets have an array which will store the distances from the source
-	int dist[V+1];
+	int dis[V+1];
 
 	// Initiate all distances to INFINITY
-	memset(dist,INT_MAX,V+1);
+	for(int i=0;i<=V;i++)
+	{
+		dis[i] = INT_MAX;
+	}
 
 	// The distance from the source to itself is 0.
-	dist[src] = 0;
+	dis[src] = 0;
 
 	// Here set s will act as the main queue
 	set<pair<int,int> > s;
@@ -66,12 +69,12 @@ void dijkstra(vector<list<pair<int,int> > > edges,int V,int src)
 
 			// If the weight/distance to the connected node from the source
 			// could be minimized through the current node
-			if(dist[x] + w < dist[e])
+			if(dis[x] + w < dis[e])
 			{
-				dist[e] = dist[x] + w;
+				dis[e] = dis[x] + w;
 
 				// Insert the next vertex with its updated distance 
-				s.insert(make_pair(dist[e],e));
+				s.insert(make_pair(dis[e],e));
 			}
 		}
 	}
@@ -79,9 +82,11 @@ void dijkstra(vector<list<pair<int,int> > > edges,int V,int src)
 	// Print out the distances from the source vertex to all vertices 
 	for(int i=1;i<=V;i++)
 	{
-		cout<<dist[i]<<" ";
+		if(dis[i]==INT_MAX)
+			cout<<"INF ";
+		else cout<<dis[i]<<" ";
 	}
-
+	cout<<endl;
 }
 
 int main()
