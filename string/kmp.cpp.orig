@@ -25,40 +25,41 @@ int lps[1001];
 int m, n;
 
 // Construction of lps[] array
-void LPSArray(string pat)
+void
+LPSArray (string pat)
 {
-	// Here len and i are used as index to go through the pattern
-	// Searching starts from 0 and 1, hence len=0 and i=1
-	int len=0, i=1;
+    // Here len and i are used as index to go through the pattern
+    // Searching starts from 0 and 1, hence len=0 and i=1
+    int len = 0, i = 1;
 
-	// lps[0] is always 0
-	lps[0] = 0;
+    // lps[0] is always 0
+    lps[0] = 0;
 
-	// Go through all characters
-	while(i < m)
-	{
-		// Found matching char
-		if(pat[i] == pat[len])
-		{
-			// lps[i] will be len+1 and increment i and len both
-			len++;
-			lps[i] = len;
-			i++;
-		}
-		else // Found a mismatch
-		{
-			// We basically go to len as lps[len-1] and do not increment i but not if len is 0
-			if(len != 0)
-			{
-				len = lps[len-1];
-			}
-			else // len=0, increment i
-			{
-				lps[i] = 0;
-				i++;
-			}
-		}
-	}
+    // Go through all characters
+    while (i < m)
+      {
+          // Found matching char
+          if (pat[i] == pat[len])
+            {
+                // lps[i] will be len+1 and increment i and len both
+                len++;
+                lps[i] = len;
+                i++;
+            }
+          else                  // Found a mismatch
+            {
+                // We basically go to len as lps[len-1] and do not increment i but not if len is 0
+                if (len != 0)
+                  {
+                      len = lps[len - 1];
+                  }
+                else            // len=0, increment i
+                  {
+                      lps[i] = 0;
+                      i++;
+                  }
+            }
+      }
 }
 
 // Searching Algorithm
@@ -111,10 +112,11 @@ void KMPSearch(string pat, string txt)
 
 }
 
-int main()
+int
+main ()
 {
-	string txt = "ABABDABACDABABCABAB";
-	string pat = "ABABCABAB";
+    string txt = "ABABDABACDABABCABAB";
+    string pat = "ABABCABAB";
 
-	KMPSearch(pat, txt);
+    KMPSearch (pat, txt);
 }
