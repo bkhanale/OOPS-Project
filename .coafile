@@ -1,0 +1,7 @@
+[all]
+bears = InvalidLinkBear, LineCountBear, coalaBear
+files = **.cpp
+max_lines_per_file = 500
+[all.c++]
+bears = GNUIndentBear
+files = **.cpp
